@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script> -->
+    <style>
+        body {
+          background-color: rgb(43, 26, 104);
+        }
+  
+        .clock {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          color: #fff;
+          transform: translateX(-50%) translateY(-50%);
+          font-size: 120px;
+          border: 1px solid #ccc;
+          padding: 5px 15px 5px 15px;
+        }
+      </style>
+</head>
+<body>
+    <div id='digital clock' class='clock'></div>
+    <script>
+
+        function showTime(){
+            let date = new Date();
+            let Hours = date.getHours()
+            let Minuts = date.getMinutes()
+            let Seconds = date.getSeconds()
+            Hours = Hours < 10 ? '0' + Hours : Hours
+            Minuts = Minuts < 10 ? '0' + Minuts : Minuts
+            Seconds = Seconds < 10 ? '0' + Seconds :Seconds
+            time = `${Hours} : ${Minuts} : ${Seconds}`
+            document.getElementById('digital clock').textContent = time
+        }
+        setInterval(showTime,1000).textContent
+    </script>
+
+</body>
+</html>
